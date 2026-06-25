@@ -1,216 +1,292 @@
-#  SkillHub – Skill Sharing & Learning Management System
+# SkillHub – Skill Sharing & Learning Management System
 
-##  Overview
+## Overview
 
-SkillHub is a Java-based console application designed to connect Mentors and Learners through structured skill-sharing sessions. The platform allows users to register, log in, create learning sessions, manage skills, and provide feedback through reviews and ratings.
+**SkillHub** is a Java-based console application designed to connect **Mentors** and **Learners** through structured skill-sharing sessions. The platform allows users to register, log in, create learning sessions, manage skills, and provide feedback through reviews and ratings.
 
-The system is built using Object-Oriented Programming (OOP) principles, JDBC database integration, file handling, and a layered architecture (Model–Service–DAO–Auth).
+The system is built using **Object-Oriented Programming (OOP)** principles, **JDBC database integration**, **file handling**, and a **layered architecture (Model → Service → DAO → Auth)**.
 
 ---
 
 # ⚙️ 1. How to Set Up & Run the Project
 
-##  Requirements
-- Java JDK 8+
-- VS Code / IntelliJ IDEA
-- MySQL Server
-- MySQL JDBC Connector (Driver)
+## Requirements
+
+* Java JDK 8+
+* VS Code or IntelliJ IDEA
+* MySQL Server
+* MySQL JDBC Connector (Driver)
 
 ---
 
-##  Setup Steps
+## Setup Steps
 
-### 1. Clone or Download Project
+### 1. Clone or Download the Project
+
+```text
 SkillHubProject/
+```
+
 ---
 
-### 2. Create Database
+### 2. Create the Database
+
+```sql
 CREATE DATABASE skillhub;
+```
+
 ---
 
 ### 3. Configure Database Connection
 
-Edit:
+Edit the file:
+
+```text
 database/DBConnection.java
+```
+
+Update the database credentials:
+
 ```java
 String url = "jdbc:mysql://localhost:3306/skillhub";
 String username = "root";
 String password = "";
+```
 
 ---
 
 ### 4. Add JDBC Driver
-- Download MySQL Connector/J
-- Add `.jar` file to project build path
+
+* Download MySQL Connector/J
+* Add the `.jar` file to your project's build path
+* Ensure the driver is included in your IDE libraries
 
 ---
 
-### 5. Run Project
+### 5. Run the Application
 
-Run:
+Execute:
+
+```text
 main/Main.java
+```
 
 ---
 
-# 2. Features
+# 🚀 2. Features
 
 ## 👤 User Features
-- Mentor Registration
-- Learner Registration
-- Secure Login System
-- Role-based Access Control
+
+* Mentor Registration
+* Learner Registration
+* Secure Login System
+* Role-Based Access Control
 
 ---
 
-##  Skill Management
-- Add Skills
-- View Skills
-- Manage Skill Data
+## 🛠 Skill Management
+
+* Add Skills
+* View Skills
+* Update Skill Information
+* Manage Skill Data
 
 ---
 
-##  Session Management
-- Create Learning Sessions
-- Mentor ↔ Learner connection
-- Track learning progress
+## 📚 Session Management
+
+* Create Learning Sessions
+* Connect Mentors and Learners
+* Track Learning Progress
+* Manage Session Details
 
 ---
 
-##  Review System
-- Add Ratings (1–5)
-- Submit Feedback
-- View Reviews
+## ⭐ Review System
+
+* Submit Ratings (1–5)
+* Leave Feedback
+* View Reviews and Ratings
 
 ---
 
-##  System Features
-- File handling (backup system)
-- Exception handling
-- JDBC database integration
+## ⚡ System Features
+
+* File Handling and Backup
+* Exception Handling
+* JDBC Database Integration
+* Layered Application Architecture
 
 ---
 
-#  3. Tech Stack
+# 💻 3. Tech Stack
 
-- Java (OOP)
-- MySQL
-- JDBC
-- File I/O
-- VS Code / IntelliJ
-- GitHub
-
----
-
-#  4. Group Members & Contribution
-
-| Member | GitHub Username | Contribution |
-|--------|----------------|--------------|
-| 👤 Member 1 | Redu-Leul | Model Layer + Exception Handling |
-| 👤 Member 2 | Obsinan| Service Layer (Business Logic) |
-| 👤 Member 3 | RedietNova | Main Application + Database (JDBC + DAO) |
-| 👤 Member 4 | Surafel Muluneh | Authentication System |
-| 👤 Member 5 | Sibhaty18-boop | File Handling + Interfaces |
+| Technology              | Purpose                      |
+| ----------------------- | ---------------------------- |
+| Java                    | Core Application Development |
+| OOP                     | Software Design Principles   |
+| MySQL                   | Database Management          |
+| JDBC                    | Database Connectivity        |
+| File I/O                | Backup and Data Storage      |
+| VS Code / IntelliJ IDEA | Development Environment      |
+| Git & GitHub            | Version Control              |
 
 ---
 
-#  5. Project Architecture
+# 👥 4. Group Members & Contributions
 
+| Member   | GitHub Username | Contribution                             |
+| -------- | --------------- | ---------------------------------------- |
+| Member 1 | Redu-Leul       | Model Layer & Exception Handling         |
+| Member 2 | Obsinan         | Service Layer (Business Logic)           |
+| Member 3 | RedietNova      | Main Application & Database (JDBC + DAO) |
+| Member 4 | Surafel Muluneh | Authentication System                    |
+| Member 5 | Sibhaty18-boop  | File Handling & Interfaces               |
+
+---
+
+# 🏗️ 5. Project Architecture
+
+```text
 Main (UI Layer)
-   ↓
+      ↓
 Service Layer (Business Logic)
-   ↓
+      ↓
 DAO Layer (Database Access)
-   ↓
+      ↓
 MySQL Database
+```
 
 ---
 
-#  6. Project Structure
+# 📂 6. Project Structure
 
+```text
 SkillHubProject/
 │
-├── model/          → Entities (User, Mentor, Learner, Skill, Session, Review)
-├── service/        → Business Logic Layer
-├── database/       → JDBC + DAO Layer
-├── auth/           → Authentication System
-├── file/           → File Handling & Backup
-├── exception/      → Custom Exceptions
-├── interfaces/     → Polymorphism & Abstraction
-└── main/           → Program Entry Point
-`
+├── model/         → Entities (User, Mentor, Learner, Skill, Session, Review)
+├── service/       → Business Logic Layer
+├── database/      → JDBC Connection & DAO Layer
+├── auth/          → Authentication System
+├── file/          → File Handling & Backup
+├── exception/     → Custom Exceptions
+├── interfaces/    → Abstraction & Polymorphism
+└── main/          → Program Entry Point
+```
 
 ---
 
-#  7. OOP Concepts Used
+# 🧩 7. OOP Concepts Used
 
-- Encapsulation
-- Inheritance
-- Polymorphism
-- Abstraction
-- Interfaces
-- Constructor Overloading
-- Method Overriding
-- Static & Instance Members
-- this / super keyword
-- Upcasting & Downcasting
+The project demonstrates key Object-Oriented Programming concepts:
 
----
-
-#  8. Exception Handling
-
-- try / catch / finally
-- throw / throws
-- Custom Exceptions:
-  - InvalidLoginException
-  - InvalidSkillException
-  - InvalidRatingException
+* Encapsulation
+* Inheritance
+* Polymorphism
+* Abstraction
+* Interfaces
+* Constructor Overloading
+* Method Overriding
+* Static and Instance Members
+* `this` and `super` Keywords
+* Upcasting and Downcasting
 
 ---
 
-#  9. File Handling
+# ⚠️ 8. Exception Handling
 
-- FileReader / FileWriter
-- BufferedReader / BufferedWriter
-- File operations:
-  - createNewFile()
-  - delete()
-  - exists()
-  - getName()
-  - length()
-  - mkdir()
+Implemented exception-handling mechanisms include:
 
----
+* `try`
+* `catch`
+* `finally`
+* `throw`
+* `throws`
 
-#  10. Database Features
+### Custom Exceptions
 
-- JDBC Connection
-- PreparedStatement
-- ResultSet
-- CRUD operations for:
-  - Users
-  - Skills
-  - Sessions
-  - Reviews
+```java
+InvalidLoginException
+InvalidSkillException
+InvalidRatingException
+```
 
 ---
 
-#  11. Edge Cases Handled
+# 📁 9. File Handling
 
-- Invalid login credentials
-- Duplicate user registration
-- Empty inputs
-- Invalid rating (1–5 only)
-- Database connection failure
-- Null pointer handling
-- File errors
+The system uses Java File I/O classes:
+
+* FileReader
+* FileWriter
+* BufferedReader
+* BufferedWriter
+
+### Supported File Operations
+
+```java
+createNewFile()
+delete()
+exists()
+getName()
+length()
+mkdir()
+```
 
 ---
 
-#  12. Project Summary
+# 🗄️ 10. Database Features
 
-SkillHub is a fully functional Java-based skill-sharing system that demonstrates real-world software engineering concepts including OOP design, layered architecture, database integration, file handling, and exception management.
+The application integrates with MySQL using JDBC:
+
+* JDBC Connection
+* PreparedStatement
+* ResultSet
+
+### CRUD Operations
+
+* Users
+* Skills
+* Sessions
+* Reviews
 
 ---
 
-# Author
- Developed as a group project for Object-Oriented Programming and Database Systems course.
+# 🛡️ 11. Edge Cases Handled
+
+The system validates and handles:
+
+* Invalid Login Credentials
+* Duplicate User Registration
+* Empty User Inputs
+* Invalid Ratings (Only 1–5 Allowed)
+* Database Connection Failures
+* Null Pointer Exceptions
+* File Read/Write Errors
+
+---
+
+# 📋 12. Project Summary
+
+**SkillHub** is a fully functional Java-based skill-sharing platform that demonstrates real-world software engineering practices through:
+
+* Object-Oriented Programming
+* Layered Architecture
+* JDBC Database Integration
+* File Handling
+* Authentication & Authorization
+* Exception Management
+
+The project provides a practical implementation of concepts learned in **Object-Oriented Programming** and **Database Systems** courses while simulating a real-world learning and mentoring platform.
+
+---
+
+# 📜 License
+
+This project was developed for educational purposes as part of an academic coursework project.
+
+---
+
+# ✍️ Author
+
+Developed collaboratively as a group project for the **Object-Oriented Programming** and **Database Systems** course.
